@@ -234,6 +234,7 @@ footer {
   background: transparent;
   padding: 10px 50px;
   text-decoration: none;
+  border:none;
   border-radius: 5px;
   color: #fff;
   font-size: 18px;
