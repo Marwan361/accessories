@@ -489,26 +489,40 @@
     
     <script src="https://cdn.emailjs.com/dist/email.min.js" defer></script>
 
-    <script>
-  (function(){
-    emailjs.init("ngLjHaSK8D7NvI6kl"); // Your EmailJS public key
+   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    // Initialize EmailJS with your public key
+    emailjs.init("ngLjHaSK8D7NvI6kl"); // Replace with your EmailJS public key
   })();
 
+  // Attach the submit event listener to the form
   document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); // Prevent the default form submission
 
-    // Send the email via EmailJS
+    const form = this;
+
+    // Ensure all form fields are filled out
+    if (!form.name.value || !form.email.value || !form.message.value) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    // Send email via EmailJS
     emailjs.send("service_e8mkrqf", "template_klpboni", {
-      name: this.name.value,       // 'name' field from the form
-      email: this.email.value,     // 'email' field from the form
-      message: this.message.value  // 'message' field from the form
-    }).then(function(response) {
-      alert("Message sent!");
+      name: form.name.value,       // 'name' field from the form
+      email: form.email.value,     // 'email' field from the form
+      message: form.message.value  // 'message' field from the form
+    })
+    .then(function(response) {
+      console.log("Email sent successfully:", response); // Log response for success
+      alert("Message sent successfully!");
+      form.reset(); // Optionally, reset the form after sending
     }, function(error) {
-      alert("FAILED: " + JSON.stringify(error));
+      console.error("Email sending failed:", error); // Log error response
+      alert("Failed to send message. Please try again.");
     });
   });
-</script>
-  
+</script>  
 
 </html>
