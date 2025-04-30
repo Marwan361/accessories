@@ -1227,6 +1227,16 @@ footer .container .contents .subscribe .input i {
     flex-direction: column;
     text-align: center;
   }
+    .feature-holder .feature-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(400px, 90%);
+          height: 300px;
+          margin: auto;
+          justify-content: center;
+      }
+  
   .statis .container .feature-card {
   background-color: #090b13;
   rotate: 45deg;
