@@ -6,10 +6,10 @@ window.addEventListener("scroll", checkHeight);
 
 function checkHeight() {
   if (window.scrollY > 200) {
-    goTopBtn.style.display = "flex";
-    goTopBtn.classList.add("btn-anim");
+    goTopBtn.style.bottom= "35px"
   } else {
-    goTopBtn.style.display = "none";
+    goTopBtn.style.bottom= "-100%"
+
   }
 }
 
