@@ -537,7 +537,8 @@ a {
   padding: 1rem;
 }
 .hover_div p {
-  color: gray;
+  color: white;
+  font-weight:bold;
   margin:auto;
   width:80%;
 }
